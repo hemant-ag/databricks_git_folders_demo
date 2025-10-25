@@ -226,4 +226,6 @@ databricks bundle summary --target prod
 databricks bundle destroy --target prod
 -- it destroys the resources that were deployed
 
+so here PROD folder , .bundle folder and databricks_git_folders_proj will be there but it will be empty.
+
 we can push these changes to github and merge into main branch
