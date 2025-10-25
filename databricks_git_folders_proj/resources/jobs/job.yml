@@ -1,0 +1,14 @@
+resources:
+  jobs:
+    db_git_folders_ingestion_job:
+      name: db_git_folders_ingestion_job
+      tasks:
+        - task_key: db_git_folders_ingestion_task
+          notebook_task:
+            notebook_path: ../../src/notebooks/db_git_folders_ingestion_notebook.ipynb
+            base_parameters:
+              catalog_name: ${var.catalog_name}
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
