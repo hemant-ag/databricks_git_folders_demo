@@ -1,0 +1,15 @@
+resources:
+  pipelines:
+    pipeline_db_git_folders_ingestion_pipeline:
+      name: db_git_folders_ingestion_pipeline
+      libraries:
+        - glob:
+            include: ../../src/pipelines/db_git_folders_ingestion_pipeline/transformations/**
+      schema: bronze
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog_name}
+      serverless: true
+      root_path: ../../src/pipelines/db_git_folders_ingestion_pipeline
